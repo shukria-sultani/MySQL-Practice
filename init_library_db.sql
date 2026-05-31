@@ -235,3 +235,10 @@ SELECT b1.book_title As book_A_title,
 b2.book_title as book_b_title, b1.author_id from books as b1
 INNER join books as b2 on b1.author_id = b2.author_id
 WHERE b1.isbn <> b2.isbn
+
+-- Group By: used to group rows based on given column
+
+SELECT genre, COUNT(genre) FROM books GROUP BY genre
+
+SELECT genre, SUM(quantity) FROM books GROUP BY genre
+
