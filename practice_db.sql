@@ -1,4 +1,4 @@
--- Active: 1771875585958@@127.0.0.1@3306
+-- Active: 1781349630272@@127.0.0.1@3306@little_lemmon
 DROP DATABASE IF EXISTS university_database;
 CREATE DATABASE little_lemmon;
 
@@ -63,3 +63,13 @@ SELECT OrderDate, COUNT(OrderDate) FROM Orders GROUP BY OrderDate;
  -- Task 4: Write a SQL SELECT statement to retrieve the number of orders placed on the same day between the following dates: 1st June 2022 and 30th June 2022.
 
  SELECT OrderDate, COUNT(OrderDate) FROM Orders GROUP BY OrderDate HAVING OrderDate BETWEEN "2022-06-01" AND "2022-06-30";
+
+ -- REPLACE command is used to insert or update data in a table, first it looks the table if the provided primary key matches any record's PK then that row will be replaced with a new record. If it could not find any match in PK it will create a new record with the provided data.
+
+-- Insert Data
+ REPLACE INTO bookings (BookingID, BookingDate, TableNumber, NumberOfGuests, customer_id)
+ VALUES(13,"2026-06-01", 10, 5, 2)
+
+ -- Update data
+ REPLACE INTO bookings (BookingID, BookingDate, TableNumber, NumberOfGuests, customer_id)
+ VALUES(13,"2026-06-01", 8, 7, 2)
