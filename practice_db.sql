@@ -93,3 +93,19 @@ SELECT OrderDate, COUNT(OrderDate) FROM Orders GROUP BY OrderDate;
  -- Update data
  REPLACE INTO bookings (BookingID, BookingDate, TableNumber, NumberOfGuests, customer_id)
  VALUES(13,"2026-06-01", 8, 7, 2)
+
+-- string functions
+
+-- concat
+SELECT OrderID, CONCAT(Department,"=", OrderQty) FROM Orders; 
+-- lowercase 
+SELECT `OrderID`, LOWER(Department) FROM orders;
+
+-- substring
+SELECT OrderID, SUBSTRING(OrderDate, 1, 4) FROM orders
+
+-- length 
+
+SELECT customer_id, LENGTH(PhoneNumber) FROM current_customers
+
+
